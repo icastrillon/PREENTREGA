@@ -1,0 +1,11 @@
+{
+    "primerArticulo": {
+        "nombre": "White Shoes",
+        "precio":30
+        
+    },
+    "segundoArticulo": {
+        "nombre": "Beige Shorts",
+        "precio":19
+    }
+}
