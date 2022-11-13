@@ -40,6 +40,7 @@ describe('Page Object Model', () => {
   });
   it(" Registro de productos ", () => {
    const numero = Math.floor(Math.random() * 1000)
+   let suma=shopinData.primerArticulo.precio+shopinData.segundoArticulo.precio
    //Registro
    register.writeUser (registerData.primerRegistro.username); 
     register.writePass (registerData.primerRegistro.password);
@@ -64,12 +65,13 @@ describe('Page Object Model', () => {
   listProduct.clickOnListadoCompras();
 // validar nombre, precio
   shoppingCard.validarProducto(shopinData.primerArticulo.nombre)
-  shoppingCard.validarPrecio(shopinData.primerArticulo.precio)
+  shoppingCard.validarPrecio(shopinData.primerArticulo.nombre,shopinData.primerArticulo.precio)
   shoppingCard.validarProducto(shopinData.segundoArticulo.nombre)
-  shoppingCard.validarPrecio(shopinData.segundoArticulo.precio)
+  shoppingCard.validarPrecio(shopinData.segundoArticulo.nombre,shopinData.segundoArticulo.precio)
   shoppingCard.clickShowprice();
   //verificar precio acumulado
-  shoppingCard.checkPrice(shopinData.primerArticulo.precio,shopinData.segundoArticulo.precio);
+ 
+  shoppingCard.checkPrice(suma);
 
   });
 });
